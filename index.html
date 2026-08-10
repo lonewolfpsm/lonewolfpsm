@@ -27,7 +27,20 @@ footer{padding:40px 0;color:#6e6e69;font-size:11px;letter-spacing:.1em;text-tran
 @media(max-width:480px){.wrap{width:min(var(--max),calc(100% - 28px))}.cards{grid-template-columns:1fr}.hero h1{font-size:58px}.hero p{font-size:16px}}
 [the existing CSS]
 
-.hero .eyebrow,.hero h1,.hero p,.hero .btn{opacity:0;transform:translateY(24px);animation:heroReveal .8s ease forwards}.hero .eyebrow{animation-delay:.15s}.hero h1{animation-delay:.3s}.hero p{animation-delay:.45s}.hero .btn{animation-delay:.6s}@keyframes heroReveal{to{opacity:1;transform:translateY(0)}}
+.hero{
+  animation:heroFade 1.2s ease both;
+}
+
+@keyframes heroFade{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 </style>
 </head>
 <body>
