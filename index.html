@@ -27,14 +27,26 @@ footer{padding:40px 0;color:#6e6e69;font-size:11px;letter-spacing:.1em;text-tran
 @media(max-width:480px){.wrap{width:min(var(--max),calc(100% - 28px))}.cards{grid-template-columns:1fr}.hero h1{font-size:58px}.hero p{font-size:16px}}
 [the existing CSS]
 
-.hero{
-  animation:heroFade 1.2s ease both;
+.hero .eyebrow,
+.hero h1,
+.hero .quote,
+.hero p:not(.quote),
+.hero .ctas{
+  opacity:0;
+  transform:translateY(30px);
+  animation:heroReveal .8s ease-out forwards;
 }
 
-@keyframes heroFade{
+.hero .eyebrow{animation-delay:.1s}
+.hero h1{animation-delay:.25s}
+.hero .quote{animation-delay:.4s}
+.hero p:not(.quote){animation-delay:.55s}
+.hero .ctas{animation-delay:.7s}
+
+@keyframes heroReveal{
   from{
     opacity:0;
-    transform:translateY(20px);
+    transform:translateY(30px);
   }
   to{
     opacity:1;
